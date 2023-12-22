@@ -1,8 +1,7 @@
-const mongoose = require('mongoose');
 const { Reaction } = require('../models/Reaction');
 
 module.exports = {
-    // Get all Reactions
+    // Get reactions
     getReactions: async (req, res) => {
         try {
             const reactions = await Reaction.find();
@@ -13,7 +12,7 @@ module.exports = {
         }
     },
 
-    // Get a single Reaction by _id
+    // Get Reaction by id
     getReactionById: async (req, res) => {
         try {
             const reactionId = req.params.reactionId;
@@ -27,9 +26,8 @@ module.exports = {
             res.status(500).json(err);
         }
     },
-
-    // Create a new Reaction
-    createReaction: async (req, res)  => {
+    // Create new Reaction
+    createReaction: async (req, res) => {
         try {
             const reactionData = req.body;
             const newReaction = await Reaction.create(reactionData);
@@ -39,8 +37,7 @@ module.exports = {
             res.status(500).json(err);
         }
     },
-
-    // Update a single Reaction by _id
+    // Update reaction
     updateReaction: async (req, res) => {
         try {
             const reactionId = req.params.reactionId;
@@ -56,7 +53,7 @@ module.exports = {
         }
     },
 
-    // Delete a single Reaction by _id
+    // Delete reaction
     deleteReaction: async (req, res) => {
         try {
             const reactionId = req.params.reactionId;

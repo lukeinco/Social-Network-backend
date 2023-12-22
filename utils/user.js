@@ -1,22 +1,21 @@
-const mongoose = require('mongoose');
 const User = require('../models/User');
 
 const userData = [
     {
-        username: 'user1',
-        email: 'user1@example.com',
+        username: 'lukeinco',
+        email: 'luke@test.com',
         thoughts: [],
         friends: [],
     },
     {
-        username: 'user2',
-        email: 'user2@example.com',
+        username: 'Syd',
+        email: 'syd@test.com',
         thoughts: [],
         friends: [],
     },
     {
-        username: 'user3',
-        email: 'user3@example.com',
+        username: 'candle',
+        email: 'candle@test.com',
         thoughts: [],
         friends: [],
     },

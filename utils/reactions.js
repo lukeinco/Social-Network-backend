@@ -3,19 +3,19 @@ const Reaction = require('../models/Reaction');
 
 const reactionData = [
     {
-        reactionBody: 'Like 1',
+        reactionBody: 'Like',
         createdAt: new Date(),
-        username: 'user1',
+        username: 'lukeinco',
     },
     {
-        reactionBody: 'Like 2',
+        reactionBody: 'Like',
         createdAt: new Date(),
-        username: 'user2',
+        username: 'Syd',
     },
     {
-        reactionBody: 'Like 3',
+        reactionBody: 'Like',
         createdAt: new Date(),
-        username: 'user1',
+        username: 'candle',
     },
 ];
 

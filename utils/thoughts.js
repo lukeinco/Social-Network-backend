@@ -1,23 +1,22 @@
-const mongoose = require('mongoose');
 const Thought = require('../models/Thought');
 
 const thoughtData = [
     {
-        thoughtText: 'Thought 1',
+        thoughtText: 'Hello',
         createdAt: new Date(),
-        username: 'user1',
+        username: 'lukeinco',
         reactions: [],
     },
     {
-        thoughtText: 'Thought 2',
+        thoughtText: 'Any thoughts?',
         createdAt: new Date(),
-        username: 'user2',
+        username: 'Syd',
         reactions: [],
     },
     {
-        thoughtText: 'Thought 3',
+        thoughtText: 'Hello hello',
         createdAt: new Date(),
-        username: 'user1',
+        username: 'candle',
         reactions: [],
     },
 ];

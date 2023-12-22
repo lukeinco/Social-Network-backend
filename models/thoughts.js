@@ -12,7 +12,7 @@ const thoughtSchema = new Schema(
         createdAt: {
             type: Date,
             default: Date.now,
-            get: (createdAt) => dateFormat(createdAt),
+            get: (createdAt) => dateFormat(createdAt), 
         },
         username: {
             type: String,
@@ -35,6 +35,4 @@ const thoughtSchema = new Schema(
 
 const Thought = model('Thought', thoughtSchema);
 
-// If you flip these two lines back and forth, the routes work but no seeds, and the other way the seeds work but not the routes.
 module.exports = Thought;
-module.exports = { Thought };
