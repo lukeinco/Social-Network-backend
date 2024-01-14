@@ -10,7 +10,7 @@ const reactionData = [
     {
         reactionBody: 'Like',
         createdAt: new Date(),
-        username: 'Syd',
+        username: 'Sydni',
     },
     {
         reactionBody: 'Like',
