@@ -72,10 +72,52 @@ module.exports = {
                 return res.status(404).json({ message: 'User not found' });
             }
 
-            res.json({ message: 'User removed' });
+            res.json({ message: 'User deleted' });
         } catch (err) {
             console.error(err);
             res.status(500).json(err);
         }
-    }
+    },
+    addFriend: async (req, res) => {
+        console.log('Adding a friend');
+        console.log(req.body);
+
+        try {
+            const user = await User.findOneAndUpdate(
+                { _id: req.params.userId },
+                { $addToSet: { friends: req.body } },
+                { runValidators: true, new: true },
+            );
+
+            if (!user) {
+                return res
+                    .status(404)
+                    .json({ message: 'No user found' });
+            }
+
+            res.json(user);
+        } catch(err) {
+            res.status(500).json(err);
+        }
+      },
+
+      deleteFriend: async (req, res)=> {
+        try {
+            const user = await User.findOneAndDelete(
+                {_id: req.params.userId },
+                { $pull: {friends: { _id: req.params.userId} } },
+                {runValidators: true, new: true}
+            );
+
+            if (!user) {
+                return res 
+                    .status(404)
+                    .json({ message: 'No user!'});
+            }
+
+            res.json(user);
+        } catch(err) {
+            res.status(500).json(err);
+        }
+      },
 };

@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const { Schema, model } = mongoose;
 
-const thoughtSchema = new Schema(
+const thoughtsSchema = new Schema(
     {
         thoughtText: {
             type: String,
@@ -12,7 +12,7 @@ const thoughtSchema = new Schema(
         createdAt: {
             type: Date,
             default: Date.now,
-            get: (createdAt) => dateFormat(createdAt), 
+            get: (createdAt) => createdAt.toISOString(), // Use toISOString to format date
         },
         username: {
             type: String,
@@ -33,6 +33,6 @@ const thoughtSchema = new Schema(
     }
 );
 
-const Thought = model('Thought', thoughtSchema);
+const Thought = model('Thought', thoughtsSchema);
 
-module.exports = Thought;
+module.exports = {Thought, thoughtsSchema};

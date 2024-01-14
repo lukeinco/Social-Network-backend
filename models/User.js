@@ -1,6 +1,6 @@
-const { Schema, Types } = require('mongoose');
-const thoughtsSchema = require('./thoughts');
-const friendsSchema = require('./friends')
+const { Schema, Types, model } = require('mongoose');
+const { thoughtsSchema, Thought } = require('./Thought');
+
 
 userSchema = new Schema(
   {
@@ -23,7 +23,12 @@ userSchema = new Schema(
       match: /.+\@.+\..+/,
     },
     thoughts: [thoughtsSchema],
-    friends: [friendsSchema],
+    friends: [
+      {
+          type: Schema.Types.ObjectId,
+          ref: 'User',
+      },
+  ],
   },
   {
     toJSON: {
@@ -32,5 +37,5 @@ userSchema = new Schema(
     id: false,
   }
 );
-
-module.exports = userSchema;
+const User = model('User', userSchema);
+module.exports = { userSchema, User };

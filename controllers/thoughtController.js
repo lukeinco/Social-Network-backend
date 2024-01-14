@@ -1,4 +1,3 @@
-const mongoose = require('mongoose');
 const { Thought } = require('../models/Thought');
 
 module.exports = {
@@ -64,7 +63,7 @@ module.exports = {
             if (!deletedThought) {
                 return res.status(404).json({ message: 'Thought not found' });
             }
-            res.json({ message: 'Thought removed' });
+            res.json({ message: 'Thought deleted' });
         } catch (err) {
             console.error(err);
             res.status(500).json(err);
